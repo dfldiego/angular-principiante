@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import *  as  data from 'src/assets/datos/platos.json'
+import * as data from 'src/assets/datos/platos.json';
 
 @Injectable({
   providedIn: 'root'
