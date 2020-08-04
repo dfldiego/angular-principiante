@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { PlatosComponent } from './components/platos/platos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DetallePlatoComponent } from './components/detalle-plato/detalle-plato.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    PlatosComponent
+    PlatosComponent,
+    DetallePlatoComponent
   ],
   imports: [
     BrowserModule,
