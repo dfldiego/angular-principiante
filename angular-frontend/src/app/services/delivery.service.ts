@@ -33,7 +33,7 @@ export class DeliveryService {
     for (let plato of this.platosFile.platos) {
       let nombre = plato.nombre.toLowerCase();
       if (nombre.indexOf(termino) >= 0) {
-        platosArr.push(plato);
+        platosArr.push(plato);      //me puede retornar un array de platos.
       }
 
     }

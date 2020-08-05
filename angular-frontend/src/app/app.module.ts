@@ -9,6 +9,7 @@ import { AboutComponent } from './components/about/about.component';
 import { PlatosComponent } from './components/platos/platos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetallePlatoComponent } from './components/detalle-plato/detalle-plato.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DetallePlatoComponent } from './components/detalle-plato/detalle-plato.
     HomeComponent,
     AboutComponent,
     PlatosComponent,
-    DetallePlatoComponent
+    DetallePlatoComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,
