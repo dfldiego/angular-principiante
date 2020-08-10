@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DeliveryService } from 'src/app/services/delivery.service';
+import { Plato } from 'src/app/entities/Plato';
 
 @Component({
   selector: 'app-detalle-plato',
@@ -8,13 +9,16 @@ import { DeliveryService } from 'src/app/services/delivery.service';
   styleUrls: ['./detalle-plato.component.css']
 })
 export class DetallePlatoComponent implements OnInit {
-  plato: any;
+  plato: Plato;
+
   constructor(private activatedRoute: ActivatedRoute, private servicioDelibery: DeliveryService) {
     this.activatedRoute.params.subscribe(params => {
-      console.log(params['id']);
-      this.plato = this.servicioDelibery.getPlatoXId(params['id']);
+      this.servicioDelibery.getPlatoEnBaseDatosXId(params['id']).subscribe(platoEncontrado => {
+        this.plato = platoEncontrado as Plato;
+      });
     })
   }
+
   ngOnInit(): void {
   }
 }

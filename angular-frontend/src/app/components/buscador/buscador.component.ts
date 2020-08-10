@@ -17,7 +17,11 @@ export class BuscadorComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {  // params -> es un termino
       this.termino = params['termino'];
-      this.platosBusqueda = this.servicioDelivery.buscarPlatos(params['termino']);  //termino -> lo uso para buscar el plato.
+      this.servicioDelivery.getPlatosBusquedaFromDataBase(this.termino).subscribe(dataPlatos => {
+        for (let plato in dataPlatos) {
+          this.platosBusqueda.push(dataPlatos[plato]);
+        }
+      })
     });
   }
 

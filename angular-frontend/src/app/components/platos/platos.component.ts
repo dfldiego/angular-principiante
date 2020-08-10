@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DeliveryService } from 'src/app/services/delivery.service';
 import { Router } from '@angular/router';
+import { Plato } from 'src/app/entities/Plato';
 
 @Component({
   selector: 'app-platos',
@@ -8,13 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./platos.component.css']
 })
 export class PlatosComponent implements OnInit {
-  platosArr: any[] = [];
+  platosArr: Plato[] = [];
+  loading = true;
 
   constructor(private servicioDelivery: DeliveryService, private router: Router) { }
 
   ngOnInit(): void {
-    this.platosArr = this.servicioDelivery.getPlatos();
-    //console.log(this.platosArr);
+    this.servicioDelivery.getPlatosFromDataBase().subscribe(dataPlatos => {
+      for (let plato in dataPlatos) {
+        this.platosArr.push(dataPlatos[plato]);
+      }
+      this.loading = false;
+    })
   }
 
   public verPlato(idx: string) {
