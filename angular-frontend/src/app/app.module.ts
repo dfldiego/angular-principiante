@@ -10,6 +10,7 @@ import { PlatosComponent } from './components/platos/platos.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetallePlatoComponent } from './components/detalle-plato/detalle-plato.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { ItemPlatoComponent } from './components/item-plato/item-plato.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     AboutComponent,
     PlatosComponent,
     DetallePlatoComponent,
-    BuscadorComponent
+    BuscadorComponent,
+    ItemPlatoComponent
   ],
   imports: [
     BrowserModule,

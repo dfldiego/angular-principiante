@@ -14,7 +14,7 @@ export class PlatosComponent implements OnInit {
 
   ngOnInit(): void {
     this.platosArr = this.servicioDelivery.getPlatos();
-    console.log(this.platosArr);
+    //console.log(this.platosArr);
   }
 
   public verPlato(idx: string) {
