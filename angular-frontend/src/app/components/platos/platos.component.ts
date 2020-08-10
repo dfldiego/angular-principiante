@@ -18,7 +18,8 @@ export class PlatosComponent implements OnInit {
   }
 
   public verPlato(idx: string) {
-    this.router.navigate(['/detallePlato/', idx])
+    console.log("ID PLATO:" + idx);
+    this.router.navigate(['/detallePlato/', idx]);
   }
 
 }

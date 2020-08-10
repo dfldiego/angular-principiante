@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Plato } from 'src/app/entities/Plato';
 import { Router } from '@angular/router';
 
@@ -11,15 +11,21 @@ export class ItemPlatoComponent implements OnInit {
   // @Input() -> especifica que el parametro puede venir desde un componente padre o fuera de nuestro componente
   @Input() platoAux: Plato;
   @Input() index: number;
+  //entre <> tiene que asignarse el tipo de dato a salir
+  //puede ser object, string, number, etc
+  @Output() platoSeleccionado: EventEmitter<number>;  //number  es el index
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.platoSeleccionado = new EventEmitter();
+  }
 
   ngOnInit(): void {
   }
 
   public verPlato() {
     console.log(this.index);
-    this.router.navigate(['/detallePlato/', this.index])
+    //this.router.navigate(['/detallePlato/', this.index]);
+    this.platoSeleccionado.emit(this.index);
   }
 
 }
