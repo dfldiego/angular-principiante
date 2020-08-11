@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { ItemPlatoComponent } from './components/item-plato/item-plato.component';
 import { PlatoListaComponent } from './components/plato-lista/plato-lista.component';
 import { PlatoAdminComponent } from './components/plato-admin/plato-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { PlatoAdminComponent } from './components/plato-admin/plato-admin.compon
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
