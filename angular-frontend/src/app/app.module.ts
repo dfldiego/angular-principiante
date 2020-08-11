@@ -12,6 +12,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DetallePlatoComponent } from './components/detalle-plato/detalle-plato.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { ItemPlatoComponent } from './components/item-plato/item-plato.component';
+import { PlatoListaComponent } from './components/plato-lista/plato-lista.component';
+import { PlatoAdminComponent } from './components/plato-admin/plato-admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ItemPlatoComponent } from './components/item-plato/item-plato.component
     PlatosComponent,
     DetallePlatoComponent,
     BuscadorComponent,
-    ItemPlatoComponent
+    ItemPlatoComponent,
+    PlatoListaComponent,
+    PlatoAdminComponent
   ],
   imports: [
     BrowserModule,

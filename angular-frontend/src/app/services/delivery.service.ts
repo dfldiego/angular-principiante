@@ -45,6 +45,7 @@ export class DeliveryService {
     return this.http.get("http://localhost:8081/WebAppServer/RestoServlet?action=busqueda&termino=" + termino).pipe(map(platosSearch => platosSearch));
   }
 
+  //FORMULARIO: para agregar platos
   platoAdminUrl: string = "http://localhost:8081/WebAppServer/RestoServlet";
   newPlato(platoNuevo: Plato) {
     return this.http.post<Plato>(this.platoAdminUrl, null, {
@@ -55,6 +56,7 @@ export class DeliveryService {
     }));
   }
 
+  //FORMULARIO: para actualizar platos
   updatePlato(platoUpdate: Plato) {
     return this.http.post<Plato>(this.platoAdminUrl, null, {
       params: new HttpParams().set("action", "actualizar").set("id", platoUpdate.id)
@@ -65,6 +67,7 @@ export class DeliveryService {
     }));
   }
 
+  //FORMULARIO: para eliminar platos
   deletePlato(idPlato: string) {
     return this.http.post(this.platoAdminUrl, null, { params: new HttpParams().set("action", "eliminar").set("id", idPlato) })
       .pipe(
